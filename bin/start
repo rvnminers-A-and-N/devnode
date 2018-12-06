@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/rvn/insight/devnode
+../ravencore-node/bin/ravencore-node start

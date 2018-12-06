@@ -1,0 +1,12 @@
+data/.lock
+data/assets/
+data/banlist.dat
+data/blocks/
+data/chainstate/
+data/db.log
+data/debug.log
+data/fee_estimates.dat
+data/mempool.dat
+data/peers.dat
+data/regtest/
+data/wallet.dat
