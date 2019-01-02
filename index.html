@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="./ravencore-lib.js"></script>
+</head>
+
+<body>
+    <h1>ravencore-lib + Insight API</h1>
+
+    <script type="text/javascript">
+        var ravencore = require('ravencore-lib');
+        console.log(new ravencore.PrivateKey(undefined, 'testnet'));
+        var insight = ravencore.Insight('https://vinx.mediciventures.com/api');
+        console.log(insight);
+
+        var addr1 = 'n2qLg9ZD295fDpjEMUgqoXfqKC1UfWM3ux';
+        var asset1 = 'VINX';
+
+        var addr2 = 'n4iwgt88k53b6P6KBDGfgs48hvEATbDdG6';
+
+        function writeJsonBodyToElement(id) {
+            return (err, res, body) => {
+                document.getElementById(id).innerHTML = JSON.stringify(body, null, 4);
+            };
+        }
+
+        function writeJsonValueToElement(id) {
+            return (json) => {
+                document.getElementById(id).innerHTML = JSON.stringify(json, null, 4);
+            };
+        }
+    </script>
+
+    <hr/>
+    <h2>GET Passthrough: get('/status?q=getInfo')</h2>
+    <p>Pass through any <a href="https://github.com/RavenDevKit/insight-api">Insight</a> URL (the part after "/api").</p>
+    <pre id="passthrough"></pre>
+    <script>
+        insight.passthroughGet("/status?q=getInfo", writeJsonBodyToElement("passthrough"));
+    </script>
+
+    <hr />
+    <h2>addrAssetUtxo('n2qLg9ZD295fDpjEMUgqoXfqKC1UfWM3ux', 'VINX')</h2>
+    <p>Get the UTXO set for an address/asset combination.</p>
+    <pre id="addrAssetUtxo"></pre>
+    <script>
+        insight.addrAssetUtxo(addr1, asset1, writeJsonBodyToElement("addrAssetUtxo"));
+    </script>
+
+    <hr />
+    <h2>addrAssets('n4iwgt88k53b6P6KBDGfgs48hvEATbDdG6')</h2>
+    <p>Get a summary of all assets owned by an address (currently just total quantity owned).</p>
+    <pre id="addrAssets"></pre>
+    <script>
+        insight.addrAssets(addr2, writeJsonValueToElement("addrAssets"));
+    </script>
+
+    <hr/>
+    <h2>addrTxs('n4iwgt88k53b6P6KBDGfgs48hvEATbDdG6')</h2>
+    <p>Get a list of all transactions associated with an address (includes asset information).</p>
+    <pre id="addrTxs"></pre>
+    <script>
+        insight.addrTxs(addr2, writeJsonBodyToElement("addrTxs"));
+    </script>
+
+</body>
+
+</html>

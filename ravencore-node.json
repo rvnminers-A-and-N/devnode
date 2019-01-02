@@ -32,8 +32,8 @@
     "ravend": {
       "sendTxLog": "/home/ubuntu/.ravencore/pushtx.log",
       "spawn": {
-        "datadir": "/Users/cfox/rvn/insight/devnode/data",
-        "exec": "/Users/cfox/rvn/Ravencoin/src/ravend",
+        "datadir": "/Users/cfox/rdk/devnode/data",
+        "exec": "/Users/cfox/rvn/bin/ravend",
         "rpcqueue": 1000,
         "rpcport": 8766,
         "zmqpubrawtx": "tcp://127.0.0.1:28332",
