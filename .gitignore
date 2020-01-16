@@ -10,3 +10,4 @@ data/mempool.dat
 data/peers.dat
 data/regtest/
 data/wallet.dat
+ravencore-node.json

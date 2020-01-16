@@ -1,4 +1,5 @@
 #!/bin/sh
 
-cd ~/rdk/devnode
+# run this from the devnode directory, which should be next to the ravencore-node directory
+
 ../ravencore-node/bin/ravencore-node start
