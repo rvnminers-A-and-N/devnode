@@ -27,6 +27,8 @@ This project is for developers.  It's purpose is to help them set up a local nod
     - `servicesConfig/ravend/exec`: set to the absolute path to the `ravend` executible you just installed.
     - `servicesConfig/ravend/datadir`: set to the absulute path to your `devnode/data` directory.
 
+* Copy `raven.conf.template` to `data/raven.conf`.
+
 * Install and set up MongoDB for stats support
     - `brew tap mongodb/brew`
     - `brew install mongodb-community`

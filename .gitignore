@@ -11,3 +11,4 @@ data/peers.dat
 data/regtest/
 data/wallet.dat
 ravencore-node.json
+data/raven.conf
