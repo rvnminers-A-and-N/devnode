@@ -40,7 +40,21 @@ This project is for developers.  It's purpose is to help them set up a local nod
 
 ## Troubleshooting
 
-Some quirks we've come across with helpful hints.
+Some quirks we've come across with helpful hints that might help.
 
 * `Error: Cannot find module '../build/Release/zmq.node'`:
     - Try running `npm install zeromq` from the `ravencoin-node` directory.
+
+## Extras
+
+* Test Data
+    - Run `ps ax | grep ravend`.
+    - Copy out the entire command (with --conf, --datadir and --regtest flags).
+    - Replace "ravend" with "raven-cli"
+    - Bind it to an alias e.g. `alias rvn="/../raven-cli --conf=..."`
+    - Use your new command to activate assets and generate test transactions:
+        - `rvn getblockchaininfo`
+        - `rvn generate 500`
+        - `rvn issue TEST 1000`
+        - `rvn generate 1`
+        - `rvn listmyassets`
