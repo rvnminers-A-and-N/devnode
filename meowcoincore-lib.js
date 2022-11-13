@@ -1,0 +1,1 @@
+../meowcoincore-lib/meowcoincore-lib.js
