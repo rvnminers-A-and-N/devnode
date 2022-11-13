@@ -10,5 +10,5 @@ data/mempool.dat
 data/peers.dat
 data/regtest/
 data/wallet.dat
-ravencore-node.json
-data/raven.conf
+meowcoincore-node.json
+data/meowcoin.conf

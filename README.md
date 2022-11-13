@@ -7,34 +7,34 @@ This project is for developers.  It's purpose is to help them set up a local nod
 ## Instructions
 
 * Clone the following into directories next to this one:
-    * [ravencore-node](https://github.com/RavenDevKit/ravencore-node)
-    * [insight-api](https://github.com/RavenDevKit/insight-api)
-    * [insight-ui](https://github.com/RavenDevKit/insight-ui)
+    * [meowcoincore-node](https://github.com/meowcoinDevKit/meowcoincore-node)
+    * [insight-api](https://github.com/meowcoinDevKit/insight-api)
+    * [insight-ui](https://github.com/meowcoinDevKit/insight-ui)
 
     Your directory structure should now look like this:
     ```bash
     ├── devnode
     ├── insight-api
     ├── insight-ui
-    └── ravencore-node
+    └── meowcoincore-node
     ```
 
 * Go into each of the three new directories and run `npm install`.
 
-* Install [Ravencoin](https://ravencoin.org/wallet/).
+* Install [meowcoin](https://meowcoin.org/wallet/).
 
-* Copy `ravencore-node.json.template` to `ravencore-node.json` and fill in the missing configuration:
-    - `servicesConfig/ravend/exec`: set to the absolute path to the `ravend` executible you just installed.
-    - `servicesConfig/ravend/datadir`: set to the absulute path to your `devnode/data` directory.
+* Copy `meowcoincore-node.json.template` to `meowcoincore-node.json` and fill in the missing configuration:
+    - `servicesConfig/meowcoind/exec`: set to the absolute path to the `meowcoind` executible you just installed.
+    - `servicesConfig/meowcoind/datadir`: set to the absulute path to your `devnode/data` directory.
 
-* Copy `raven.conf.template` to `data/raven.conf`.
+* Copy `meowcoin.conf.template` to `data/meowcoin.conf`.
 
 * Install and set up MongoDB for stats support
     - `brew tap mongodb/brew`
     - `brew install mongodb-community`
     - `brew services start mongodb-community`
     - `mongo`
-        - `>use raven-api-regtest`
+        - `>use meowcoin-api-regtest`
         - `>db.createUser( { user: "test", pwd: "test1234", roles: [ "readWrite" ] } )`
         - `>exit`
 
@@ -45,18 +45,18 @@ This project is for developers.  It's purpose is to help them set up a local nod
 Some quirks we've come across with helpful hints that might help.
 
 * `Error: Cannot find module '../build/Release/zmq.node'`:
-    - Try running `npm install zeromq` from the `ravencoin-node` directory.
+    - Try running `npm install zeromq` from the `meowcoin-node` directory.
 
 ## Extras
 
 * Test Data
-    - Run `ps ax | grep ravend`.
+    - Run `ps ax | grep meowcoind`.
     - Copy out the entire command (with --conf, --datadir and --regtest flags).
-    - Replace "ravend" with "raven-cli"
-    - Bind it to an alias e.g. `alias rvn="/../raven-cli --conf=..."`
+    - Replace "meowcoind" with "meowcoin-cli"
+    - Bind it to an alias e.g. `alias MEWC="/../meowcoin-cli --conf=..."`
     - Use your new command to activate assets and generate test transactions:
-        - `rvn getblockchaininfo`
-        - `rvn generate 500`
-        - `rvn issue TEST 1000`
-        - `rvn generate 1`
-        - `rvn listmyassets`
+        - `MEWC getblockchaininfo`
+        - `MEWC generate 500`
+        - `MEWC issue TEST 1000`
+        - `MEWC generate 1`
+        - `MEWC listmyassets`

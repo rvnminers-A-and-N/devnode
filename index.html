@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <script src="./ravencore-lib.js"></script>
+    <script src="./meowcoincore-lib.js"></script>
 </head>
 
 <body>
-    <h1>ravencore-lib + Insight API</h1>
+    <h1>meowcoincore-lib + Insight API</h1>
 
     <script type="text/javascript">
-        var ravencore = require('ravencore-lib');
-        console.log(new ravencore.PrivateKey(undefined, 'testnet'));
-        var insight = ravencore.Insight('https://vinx.mediciventures.com/api');
+        var meowcoincore = require('meowcoincore-lib');
+        console.log(new meowcoincore.PrivateKey(undefined, 'testnet'));
+        var insight = meowcoincore.Insight('https://vinx.mediciventures.com/api');
         console.log(insight);
 
         var addr1 = 'n2qLg9ZD295fDpjEMUgqoXfqKC1UfWM3ux';
@@ -35,7 +35,7 @@
 
     <hr/>
     <h2>GET Passthrough: get('/status?q=getInfo')</h2>
-    <p>Pass through any <a href="https://github.com/RavenDevKit/insight-api">Insight</a> URL (the part after "/api").</p>
+    <p>Pass through any <a href="https://github.com/meowcoinDevKit/insight-api">Insight</a> URL (the part after "/api").</p>
     <pre id="passthrough"></pre>
     <script>
         insight.passthroughGet("/status?q=getInfo", writeJsonBodyToElement("passthrough"));

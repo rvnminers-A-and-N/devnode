@@ -1,5 +1,5 @@
 #!/bin/sh
 
-# run this from the devnode directory, which should be next to the ravencore-node directory
+# run this from the devnode directory, which should be next to the meowcoincore-node directory
 
-../ravencore-node/bin/ravencore-node start
+../meowcoincore-node/bin/meowcoincore-node start
